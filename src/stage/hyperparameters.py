@@ -8,8 +8,9 @@ from pathlib import Path
 from stage import config as cfg
 from stage.conditioning.condition_type import ConditionType
 from stage.conditioning.conditioning_method import ConditioningMethod
-# from stage.conditioning.prompt_processor import PromptProcessor
 from stage.conditioning import ConcreteEmbedder
+from stage.conditioning.prompt_processor import InterleavedContextPromptProcessor
+from stage.conditioning.t5embedder import T5EmbedderGPU
 from stage.data.stem import Stem
 from stage.utils.logging import to_loggable
 
@@ -241,3 +242,19 @@ pretrained_encodec_meta_32khz_params: EncodecParams = EncodecParams(
     sum_loss_mulitiplier=0,
     weights=str(cfg.weights_dir() / "encodec_32khz.pt"),
 )
+
+stage_params = MusicgenParams(
+    encodec_params=pretrained_encodec_meta_32khz_params,
+    prompt_processor_params=PromptProcessorParams(
+        keep_only_valid_steps=True,
+        model_class=InterleavedContextPromptProcessor,
+        context_dropout=0.1),
+    conditioning_params=ConditioningParams(
+        embedder_types={
+            ConditionType.DESCRIPTION: T5EmbedderGPU,
+        },
+        conditioning_methods={
+            ConditionType.DESCRIPTION: ConditioningMethod.CROSS_ATTENTION,
+        },
+        conditioning_dropout=0.5),
+    lm_params=PretrainedSmallLmParams(sep_token=2049))

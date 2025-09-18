@@ -46,9 +46,6 @@ def launch_train():
     max_steps = 100_000
     max_time = "00:24:00:00"
 
-    # 1 epoch ~= 30 mins of training
-    # batch_size * n_gpus * 60 seconds * 30 minutes / 2 datasets
-    # 4 * 4 * 60 * 30 / 2 = 14_400
     n_samples_per_epoch = 10_000
 
     accumulate_grad_batches = 4

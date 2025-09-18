@@ -49,7 +49,7 @@ class LightningMusicgen(L.LightningModule):
             p.requires_grad = False
 
         # instantiate prompt processor
-        self.prompt_processor = self.params.prompt_processor_params.model_class(
+        self.prompt_processor: PromptProcessor = self.params.prompt_processor_params.model_class(
             self.encodec_model,
             self.special_token,
             keep_only_valid_steps=params.prompt_processor_params.
@@ -341,6 +341,25 @@ class LightningMusicgen(L.LightningModule):
                  description: Optional[List[str]],
                  context_dropout_mask: Optional[Tensor] = None,
                  prog_bar: bool = False) -> Tensor:
+        """Run autoregressive generation
+
+        Args:
+            n_samples (int): number of samples to generate (batch size). All other input parameters should match this.
+            gen_seconds (float | int): total length of generation in seconds, including prompt if present.
+            prompt (Optional[Tensor]): a piece of input to continue.
+            context (Optional[Tensor  |  List[Tensor]]): a musical context to generate an accompaniment for.
+            style (Optional[Tensor]): a piece of music to use as stylistic reference.
+            beat (Optional[List[Beat]]): a beat object to follow
+            description (Optional[List[str]]): a list of descriptions to use as conditioning
+            context_dropout_mask (Optional[Tensor], optional): Defaults to None.
+            prog_bar (bool, optional): whether to display a progress bar. Defaults to False.
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            Tensor: _description_
+        """
 
         n_gen_frames = int(self.encodec_model.frame_rate * gen_seconds)
 
@@ -369,10 +388,20 @@ class LightningMusicgen(L.LightningModule):
         # embed/encode conditioning data
         conditions = {
             "description": description,
-            "context": context,
+            # "context": context,
             "style": style,
             "beat": beat,
         }
+
+        # check for compatibilty of conditions
+        for c_name, c_value in conditions.items():
+            if c_value is None:
+                continue
+            condtype: ConditionType = ConditionType(c_name)
+            if condtype.value not in self.condition_provider.embedders:
+                raise ValueError(
+                    f"This version of the model does not support conditioning "
+                    f"with {c_name}. You should pass None.")
 
         processed_conditions: Dict[ConditionType, EmbeddedCondition] = (
             self.condition_provider.process_conditions(conditions,
