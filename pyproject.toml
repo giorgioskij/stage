@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.10.14"
 dependencies = [
     "frozendict>=2.4.6",
+    "ipython>=8.37.0",
     "ipywidgets>=8.1.7",
     "jupyter>=1.1.1",
     "laion-clap>=1.1.7",
@@ -25,7 +26,6 @@ dependencies = [
     "transformers>=4.53.1",
     "wandb>=0.21.0",
     "x-transformers==1.26.0",
-    "xformers>=0.0.31.post1",
 ]
 
 [project.scripts]

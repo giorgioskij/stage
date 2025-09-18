@@ -1,5 +1,33 @@
-# Stage
-Code and checkpoints for our paper "STAGE: Stemmed Accompaniment Generation through Prefix-Based Conditioning" will be released soon.
+# Stage - Single Stem Accompaniment Generation
+
+### Disclaimer:
+This is very much **research-oriented** code, it's not by any means production-ready. You'll see configurations for many failed experiments, and some seemingly overcomplicated structures that were necessary for our testing and experimentation workflow. 
+
+If you are interested in making this code more usable, feel free to contribute or to ask questions! <br>Research is only beautiful when it's shared.
+
+
+# Prerequisites
+To run code in this repo, you need to:
+
+- ## Set up the environment:
+    This repo's environment is managed by [uv](https://docs.astral.sh/uv/).
+
+    Setting everything up should be as easy as:
+    - cloning the repo
+    - `cd`-ing into it
+    - running `uv sync`
+
+- ## Download the weights for the pre-trained components of our models
+    For ease of use, we entirely rewrote `MusicGen`'s architecture, so you'll need to download pre-trained weights that are compatible with our model.
+
+    - Download the weights [here (coming soon)]() and place them in the `weights/` directory of this repo. You can place them anywhere else if you'd like, but modify `src/stage/config.py` accordingly if you do so.
+
+    - If you want to run inference on our trained models, download the fine-tuned checkpoints [here (coming soon)]() and place them inside the `checkpoints/` directory.
+
+
+# Inference
+
+Follow the example in `src/stage/inference.py` to test inference with any model.
 
 
 # Data:
@@ -29,15 +57,9 @@ moisesdb
 
 # Training: 
 
-The model can be trained using the training script in `src.stage.train_stage_drums.py`
+The model can be trained using the training script in `src/stage/train_stage_drums.py`
 Here you can set all the hyperparameters for both the dataset and the model.
 
 Runs are by default logged to Weights And Biases. Make sure to either:
-- set your WandB entity/project name in `stage.config.py`
+- set your WandB entity/project name in `stage/config.py`
 - set `log=False` in the `train(...)` function call
-
-
-# Inference
-
-
-
