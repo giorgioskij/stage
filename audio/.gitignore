@@ -1,4 +1,3 @@
 *
 !.gitignore
-!sample*/context.wav
-!sample*/desc.txt
+!sample*
