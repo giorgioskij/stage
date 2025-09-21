@@ -438,7 +438,7 @@ class LightningMusicgen(L.LightningModule):
                 gen_sequence[n_samples:, :, offset:offset + 1],
             )
 
-            if prog_bar:
+            if prog_bar and torch.cuda.is_available():
                 torch.cuda.synchronize()
 
         assert not (gen_sequence == -1).any()

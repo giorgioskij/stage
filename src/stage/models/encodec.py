@@ -351,7 +351,9 @@ class EncodecModel(nn.Module):
                              renormalize=False)
 
         if params.weights is not None:
-            weights = torch.load(Path(params.weights), weights_only=True)
+            weights = torch.load(Path(params.weights),
+                                 weights_only=True,
+                                 map_location="cpu")
             model.load_state_dict(weights)
 
         return model
