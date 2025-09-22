@@ -1,6 +1,6 @@
 # Stage - Single Stem Accompaniment Generation
 <p align="center">
-  <a href="https://arxiv.org/abs/2504.05690>
+  <a href="https://arxiv.org/abs/2504.05690">
     <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2504.05690-b31b1b?logo=arxiv&labelColor=gray">
   </a>
   <!-- <a href="https://YOUR-PROJECT-SITE">
@@ -21,9 +21,9 @@
   <!-- <a href="https://hub.docker.com/r/NAMESPACE/IMAGE">
     <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/NAMESPACE/IMAGE?label=Docker%20pulls">
   </a> -->
-  <a href="https://github.com/giorgioskig/stage/blob/main/LICENSE">
+  <!-- <a href="https://github.com/giorgioskig/stage/blob/main/LICENSE">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg">
-  </a>
+  </a> -->
   <a href="https://github.com/giorgioskij/STAGE/stargazers">
     <img alt="GitHub stars" src="https://img.shields.io/github/stars/giorgioskij/stage?style=social">
   </a>
