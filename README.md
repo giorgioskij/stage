@@ -1,36 +1,6 @@
 # Stage - Single Stem Accompaniment Generation
-<p align="center">
-  <a href="https://arxiv.org/abs/2504.05690">
-    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2504.05690-b31b1b?logo=arxiv&labelColor=gray">
-  </a>
-  <!-- <a href="https://YOUR-PROJECT-SITE">
-    <img alt="Project Page" src="https://img.shields.io/badge/Project-Page-3fb950?logo=githubpages&labelColor=gray">
-  </a> -->
-  <a href="https://https://giorgioskij.github.io/stage-demo/">
-    <img alt="Live Demo" src="https://img.shields.io/badge/Demo-Samples-1997B5?labelColor=gray">
-  </a>
-  <!-- <a href="https://colab.research.google.com/github/OWNER/REPO/blob/main/notebooks/DEMO.ipynb">
-    <img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg">
-  </a> -->
-  <!-- <a href="https://huggingface.co/spaces/ORG/SPACE">
-    <img alt="HF Spaces" src="https://img.shields.io/badge/🤗-Spaces-ffcc4d?labelColor=gray">
-  </a> -->
-  <!-- <a href="https://paperswithcode.com/paper/YOUR-PWC-SLUG">
-    <img alt="Papers with Code" src="https://img.shields.io/badge/Papers%20with%20Code-Page-2b7cde?logo=paperswithcode&labelColor=gray">
-  </a> -->
-  <!-- <a href="https://hub.docker.com/r/NAMESPACE/IMAGE">
-    <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/NAMESPACE/IMAGE?label=Docker%20pulls">
-  </a> -->
-  <!-- <a href="https://github.com/giorgioskig/stage/blob/main/LICENSE">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg">
-  </a> -->
-  <a href="https://github.com/giorgioskij/STAGE/stargazers">
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/giorgioskij/stage?style=social">
-  </a>
-  <!-- <a href="https://doi.org/DOI_HERE">
-    <img alt="DOI" src="https://zenodo.org/badge/DOI/DOI_HERE.svg">
-  </a> -->
-</p>
+[![ArXiv](https://img.shields.io/badge/arXiv-2504.05690-b31b1b?logo=arxiv&labelColor=gray)](https://arxiv.org/abs/2504.05690)
+[![demo](https://img.shields.io/badge/Demo-Samples-1997B5?labelColor=gray)](https://https://giorgioskij.github.io/stage-demo/)
 
 
 ### Disclaimer:
