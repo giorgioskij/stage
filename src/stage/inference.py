@@ -17,14 +17,14 @@ checkpoints/
 """
 
 #%% Load model
-INSTRUMENT = "bass"
-checkpoint_path = cfg.CKP_DIR / f"stage-{INSTRUMENT}-ckp1.pt"
+INSTRUMENT = "drums"
+checkpoint_path = cfg.CKP_DIR / f"stage-{INSTRUMENT}.safetensors"
 model = load_model(checkpoint_path)
 
 #%% Load conditioning, generate and save
 
 # load context audio, description
-SAMPLE = "sample1"
+SAMPLE = "sample2"
 SEED = 42
 
 # load description if present

@@ -1,6 +1,8 @@
 from pathlib import Path
+from tabnanny import check
 from typing import Optional
 import torch
+from safetensors import torch as sft
 
 from stage.conditioning.condition_type import ConditionType
 from stage.conditioning.conditioning_method import ConditioningMethod
@@ -30,10 +32,11 @@ def load_model(checkpoint_path: Path,
         lm_params=hp.PretrainedSmallLmParams(sep_token=2049))
 
     model: LightningMusicgen = stage_params.instantiate()
-    state_dict = torch.load(checkpoint_path)
+    # state_dict = torch.load(checkpoint_path)
+    # model.load_state_dict(state_dict)
+    sft.load_model(model, checkpoint_path)
     if device is None:
         device = "cuda" if torch.cuda.is_available() else "cpu"
-    model.load_state_dict(state_dict)
     model = model.to(device).eval()
 
     return model
