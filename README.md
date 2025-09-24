@@ -23,9 +23,9 @@ To run code in this repo, you need to:
 - ## Download the weights for the pre-trained components of our models
     For ease of use, we entirely rewrote `MusicGen`'s architecture, so you'll need to download pre-trained weights that are compatible with our model.
 
-    - Download the weights [here (coming soon)]() and place them in the `weights/` directory of this repo. You can place them anywhere else if you'd like, but modify `src/stage/config.py` accordingly if you do so.
+    - Download the weights [here](https://drive.google.com/drive/folders/1tNZsN3OYC8PGVklCRPkebPvS5QGX1w1q?usp=sharing) and place them in the `weights/` directory of this repo. You can place them anywhere else if you'd like, but modify `src/stage/config.py` accordingly if you do so.
 
-    - If you want to run inference on our trained models, download the fine-tuned checkpoints [here (coming soon)]() and place them inside the `checkpoints/` directory.
+    - If you want to run inference on our trained models, download the fine-tuned checkpoints [here](https://drive.google.com/drive/folders/1tNZsN3OYC8PGVklCRPkebPvS5QGX1w1q?usp=sharing) and place them inside the `checkpoints/` directory.
 
 
 # Inference
